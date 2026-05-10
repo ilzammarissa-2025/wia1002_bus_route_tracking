@@ -16,7 +16,7 @@ public class RouteService {
     }
 
     public LinkedList<BusStop> getRouteStops(String routeId) {
-        List<BusStop> filteredStops = busStopRepository.findStopsByRouteId(routeId);
+        List<BusStop> filteredStops = busStopRepository.findStopsByRouteShortName(routeId);
         return new LinkedList<>(filteredStops);
     }
 }

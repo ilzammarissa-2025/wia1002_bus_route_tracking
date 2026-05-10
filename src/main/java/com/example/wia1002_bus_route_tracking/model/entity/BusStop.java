@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import org.locationtech.jts.geom.Point;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "bus_stops")
@@ -23,7 +24,16 @@ public class BusStop {
     @Column(name = "stop_name", nullable = false)
     private String stopName;
 
+    @JsonIgnore
     // check the columnDefinition matches your exact SQL script
     @Column(name = "location", columnDefinition = "geography(Point, 4326)")
     private Point location; 
+
+    public double getLatitude() {
+        return this.location != null ? this.location.getY() : 0.0;
+    }
+
+    public double getLongitude() {
+        return this.location != null ? this.location.getX() : 0.0;
+    }
 }

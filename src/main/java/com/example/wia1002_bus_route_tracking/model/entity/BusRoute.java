@@ -16,7 +16,7 @@ public class BusRoute {
     @Column(name = "route_id", length = 50)
     private String routeId;
 
-    @Column(name = "route_short_name", length = 10)
+    @Column(name = "route_short_name", length = 50)
     private String routeShortName;
 
     @Column(name = "route_long_name")

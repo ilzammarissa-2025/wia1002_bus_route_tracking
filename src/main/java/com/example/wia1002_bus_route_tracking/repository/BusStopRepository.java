@@ -29,8 +29,11 @@ public interface BusStopRepository extends JpaRepository<BusStop, String> {
     //use JPQL for BusStop and RouteStop, loop up mapping table to find all IDs associated with a route, then fetches the full BusStop obects for those IDs
     //use when student clicks specific bus route and see every stop
     //Using a JOIN guarantees the outer BusStop list is sorted by the RouteStop sequence.
-    @Query("SELECT s FROM BusStop s JOIN RouteStop rs ON s.stopId = rs.stopId " +
-           "WHERE rs.routeId = :routeId ORDER BY rs.stopSequence ASC")
-    List<BusStop> findStopsByRouteId(@Param("routeId") String routeId);                                    
+    @Query("SELECT s FROM BusStop s " +
+           "JOIN RouteStop rs ON s.stopId = rs.stopId " +
+           "JOIN BusRoute br ON rs.routeId = br.routeId " +
+           "WHERE br.routeShortName = :routeShortName " +
+           "ORDER BY rs.stopSequence ASC")
+    List<BusStop> findStopsByRouteShortName(@Param("routeShortName") String routeShortName);                                  
     
 }
