@@ -7,7 +7,7 @@ import com.example.wia1002_bus_route_tracking.model.entity.RouteStop;
 import com.example.wia1002_bus_route_tracking.repository.BusStopRepository;
 
 import com.example.wia1002_bus_route_tracking.repository.RouteStopRepository;
-import com.example.wia1002_bus_route_tracking.repository.busRouteRepository;
+import com.example.wia1002_bus_route_tracking.repository.BusRouteRepository;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 import org.locationtech.jts.geom.Coordinate;
@@ -29,7 +29,7 @@ import java.util.*;;
 @Service
 public class GtfsStaticService {
     
-    private final busRouteRepository busRouteRepository;
+    private final BusRouteRepository busRouteRepository;
 
     private final RouteStopRepository routeStopRepository;
 
@@ -42,7 +42,7 @@ public class GtfsStaticService {
     //API endpoints from data.gov.my GFTS, note that we only parse the rapid-kl bus data
     private final String STATIC_ZIP_URL = "https://api.data.gov.my/gtfs-static/prasarana?category=rapid-bus-kl";
 
-    public GtfsStaticService(BusStopRepository busStopRepository,  RouteStopRepository routeStopRepository, busRouteRepository busRouteRepository) {
+    public GtfsStaticService(BusStopRepository busStopRepository,  RouteStopRepository routeStopRepository, BusRouteRepository busRouteRepository) {
         this.busStopRepository = busStopRepository;
         this.routeStopRepository = routeStopRepository;
         this.busRouteRepository = busRouteRepository;

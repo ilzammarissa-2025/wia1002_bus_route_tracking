@@ -10,3 +10,5 @@ public class HelloController {
         return "Hello, World! The Bus Tracker is alive.";
     }
 }
+
+//this is just a test controller to check if the application is running correctly. It will return a simple message when the /hello endpoint is accessed.
