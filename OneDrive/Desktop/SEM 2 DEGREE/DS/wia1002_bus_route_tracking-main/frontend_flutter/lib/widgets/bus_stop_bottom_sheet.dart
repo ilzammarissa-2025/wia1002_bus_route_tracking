@@ -1,6 +1,6 @@
 // lib/widgets/bus_stop_bottom_sheet.dart
 import 'package:flutter/material.dart';
-import '../models/BusArrival.dart';
+import '../models/bus_arrival.dart';
 import '../services/api_service.dart';
 
 class BusStopBottomSheet extends StatefulWidget {
@@ -232,7 +232,7 @@ class _BusStopBottomSheetState extends State<BusStopBottomSheet> {
         border: Border.all(color: Colors.grey[200]!),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.05),
+            color: Colors.grey.withValues(alpha: 0.05),
             spreadRadius: 1,
             blurRadius: 4,
             offset: const Offset(0, 2),
@@ -280,7 +280,7 @@ class _BusStopBottomSheetState extends State<BusStopBottomSheet> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
             decoration: BoxDecoration(
-              color: getTimeColor(arrival.minutesToArrival).withOpacity(0.1),
+              color: getTimeColor(arrival.minutesToArrival).withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(20),
             ),
             child: Column(
