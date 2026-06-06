@@ -1,0 +1,27 @@
+{
+    "configurations": [
+        {
+            "name": "Launch Flutter Web (Port 3000)",
+            "request": "launch",
+            "type": "dart",
+            "program": "frontend_flutter/lib/main.dart",
+            "args": [
+                "-d",
+                "chrome",
+                "--web-port",
+                "3000"
+            ]
+        },
+
+        {
+            "type": "java",
+            "name": "Spring Boot-Wia1002BusRouteTrackingApplication<wia1002_bus_route_tracking>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.wia1002_bus_route_tracking.Wia1002BusRouteTrackingApplication",
+            "projectName": "wia1002_bus_route_tracking",
+            "args": "",
+            "envFile": "${workspaceFolder}/frontend_flutter/.env"
+        }
+    ]
+}
